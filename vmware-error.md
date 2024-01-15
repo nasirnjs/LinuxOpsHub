@@ -1,4 +1,6 @@
-# VMware Workstation GCC Compiler Error
+# VMware Workstation Relates common issues and solutions
+
+## VMware Workstation GCC Compiler Error
 ```bash
 sudo apt update
 sudo apt-get install build-essential linux-headers-generic
@@ -12,7 +14,7 @@ sudo apt update
 sudo apt install g++-12 gcc-12
 ```
 
-**##VMware several modules must be compiled and loaded into the running kernel Error!!!**
+## VMware several modules must be compiled and loaded into the running kernel Error!!!**
 
 ```bash
 git clone https://github.com/mkubecek/vmware-host-modules.git 
