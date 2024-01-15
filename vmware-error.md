@@ -4,6 +4,13 @@ sudo apt update
 sudo apt-get install build-essential linux-headers-generic
 sudo apt install build-essential
 ```
+If does not work, try second steps.
+
+```
+sudo add-apt-repository ppa:ubuntu-toolchain-r/ppa -y
+sudo apt update
+sudo apt install g++-12 gcc-12
+```
 
 **##VMware several modules must be compiled and loaded into the running kernel Error!!!**
 
