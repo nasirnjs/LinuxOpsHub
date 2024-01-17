@@ -25,3 +25,7 @@ make
 sudo make install 
 sudo /etc/init.d/vmware start
 ```
+
+## Virtual ethernet failed [Ref](https://communities.vmware.com/t5/VMware-Workstation-Pro/Virtual-ethernet-failed/td-p/2906720)
+
+`sudo vmware-modconfig --console --install-all`
