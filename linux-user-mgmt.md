@@ -136,3 +136,10 @@ For example, the octal value 764 can be broken down as follows:
 
 ![Permission Details](/image/linux-permission-details.png)
 ![Permission ](/image/linux-permission-details.png)
+
+
+Set owner have full permission group and other users has only read and execute permission.\
+`chmod 755 file-name`
+
+Set execute permission for the owner only.\
+`chmod u+x your_script.sh`
