@@ -28,5 +28,11 @@ Steps 2. Once the download process is complete, extracting the archive.
 7. Checked the Java version to confirm the installation.\
 `java --version`
 
+**Optional**\
+If you want to add multiple java in registered as an alternative in your system.
+
+`sudo update-alternatives --install /usr/bin/java java /usr/local/jdk-18/bin/java 100`
+
+`update-alternatives --list java`
 
 [Ref](https://www.linuxcapable.com/how-to-install-openjdk-17-on-ubuntu-linux/)
