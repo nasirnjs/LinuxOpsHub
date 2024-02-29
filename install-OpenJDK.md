@@ -35,4 +35,7 @@ If you want to add multiple java in registered as an alternative in your system.
 
 `update-alternatives --list java`
 
+To configure the default Java runtime environment.\
+`sudo update-alternatives --config java`
+
 [Ref](https://www.linuxcapable.com/how-to-install-openjdk-17-on-ubuntu-linux/)
