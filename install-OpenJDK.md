@@ -11,7 +11,7 @@ Steps 1. Visit the [downloads](https://jdk.java.net/archive/) page to obtain the
 
 Steps 2. Once the download process is complete, extracting the archive.
 
-`tar -xvf openjdk-18.*`
+`tar -xvf openjdk-18_linux-x64_bin.tar.gz`
 
 3. Moved the JDK 18 directory to `/usr/local/`\
 `sudo mv jdk-18 /usr/local/`
