@@ -1,0 +1,2 @@
+
+An SSH (Secure Shell) Server is software that allows secure remote access to computers or servers over a network. It encrypts data exchanged between the client and server, enabling secure command-line access, file transfers, and other network services. Commonly used in UNIX-like systems, SSH servers authenticate users and ensure secure communication.
