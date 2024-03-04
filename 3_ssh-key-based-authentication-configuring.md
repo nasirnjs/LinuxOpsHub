@@ -1,6 +1,16 @@
-SSH keys based authentication configuration with Custom Host
+<h2>SSH keys based authentication configuration with Custom Host</h2>
 
-Authentication methods
+**Tables of Contents**
+- [Authentication methods](#authentication-methods)
+- [Advantages of Public Key Authentication:](#advantages-of-public-key-authentication)
+  - [Best Practices for Public Key Authentication:](#best-practices-for-public-key-authentication)
+- [Step 1: Generate SSH Key Pair](#step-1-generate-ssh-key-pair)
+- [Step 2: Copy Public Key to Remote Host](#step-2-copy-public-key-to-remote-host)
+- [Step 3: Test SSH Connection](#step-3-test-ssh-connection)
+- [Step 4: Optional - Create SSH Config File](#step-4-optional---create-ssh-config-file)
+- [Step 5: Connect Using SSH Config](#step-5-connect-using-ssh-config)
+
+### Authentication methods
 SSH supports two authentication methods:
   - Public key
   - Password
