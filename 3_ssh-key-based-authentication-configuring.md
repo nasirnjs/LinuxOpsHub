@@ -17,7 +17,7 @@ SSH supports two authentication methods:
   
 Public key authentication is a method of logging into an SSH/SFTP account using a cryptographic key pair rather than a password. This method provides a more secure way of authenticating compared to password-based authentication.
 
-Public key authentication is a method of logging into an SSH/SFTP account using a cryptographic key pair rather than a password. This method provides a more secure way of authenticating compared to password-based authentication. Here's how it works:
+**Here's how it works:**
 
 1. **Key Generation**: First, you generate a key pair on your local machine - a public key and a private key. The private key is kept secret on your local machine, while the public key can be shared freely.
 
