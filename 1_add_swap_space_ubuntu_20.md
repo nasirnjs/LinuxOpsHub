@@ -36,22 +36,6 @@ And that's it! You have successfully added swap space to your Ubuntu 20.04 syste
 [Referance](https://www.digitalocean.com/community/tutorials/how-to-add-swap-space-on-ubuntu-20-04)
 
 
-**Configure and manage SWAP Space**
-
-Format the 21MB partition as swap. Next, make it active, tell Linux to start using it as swap memory.
-```
-sudo mkswap /dev/vdb2
-sudo swapon /dev/vdb2
-
-sudo swapon --show
-
-```
-
-Tell Linux to stop using the 21MB partition as swap.
-```
-sudo swapoff /dev/vdb2
-sudo swapon --show
-```
 
 Increase the existing swap (i.e /swapfile) size by 1GB.
 ```
