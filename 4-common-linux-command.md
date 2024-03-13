@@ -12,19 +12,12 @@ cp: Copy files or directories.
 mv: Move or rename files and directories.
 cat: Display the content of a file.
 less/more: View a file one page at a time.
-head/tail: Display the beginning or end of a file.
 nano/vi: Text editors for creating and editing files.
-grep: Search for text in files.
-find: Search for files and directories.
 ps: List running processes.
 kill: Terminate processes.
 top/htop: Monitor system performance and processes.
 df: Display disk space usage.
 du: Display directory space usage.
-
-List of directories in the current directory along with their sizes.\
-`du -h --max-depth=1 | awk '{ print $1 "\t" $2 }' | grep -E '^[0-9.]+[MG]?\s'`
-
 ifconfig/ip: Configure and display network interfaces.
 ping: Check network connectivity.
 ssh: Securely log in to remote machines.
@@ -49,8 +42,6 @@ date: Display or set the system date and time.
 hostname: Display or set the system hostname.
 shutdown/reboot: Shutdown or restart the system.
 uname: Display system information.
-which: Locate a program file in the user's path.
-grep: Search for text in files.
 sed: Stream editor for text manipulation.
 awk: Text processing tool for extracting and manipulating data.
 ln: Create links (hard and symbolic) to files.
@@ -62,8 +53,43 @@ lsof: List open files and processes.
 shutdown: Shutdown or restart the system.
 diff: Compare and find differences between files.
 man: Display manual pages for commands.
-file: Determine file type.
 ```
+
+
+
+
+Display the first 10 lines of a file.\
+`head file.txt`
+
+Display a specific number of lines from the beginning of a file.
+`head -n 5 file.txt`
+
+Display the last 10 lines of a file.\
+`tail file.txt`
+
+Display a specific number of lines from the end of a file.\
+`tail -n 5 file.txt`
+
+List of directories in the current directory along with their sizes.\
+`du -h --max-depth=1 | awk '{ print $1 "\t" $2 }' | grep -E '^[0-9.]+[MG]?\s'`
+
+This is the location of the ls binary executable in the /usr/bin directory.\
+`which -a ls`
+
+This command searches for all files with the .txt extension in the directory .\
+`find /path/to/search -name "*.txt"`
+
+Search for files modified in the last 7 days.\
+`find /path/to/search -type f -mtime -7`
+
+This command performs a case-insensitive search for the specified pattern in the file.\
+`grep -i "pattern" file.txt`
+
+The man command in Linux is used to display the manual pages for various commands.\
+`man vim`
+
+The file command in Linux is used to determine the type.\
+`file package.json`
 
 To install nmap, you can use the package manager appropriate.\
 `sudo apt install nmap`
