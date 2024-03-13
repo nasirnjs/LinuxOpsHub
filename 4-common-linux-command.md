@@ -64,3 +64,37 @@ diff: Compare and find differences between files.
 man: Display manual pages for commands.
 file: Determine file type.
 ```
+
+To install nmap, you can use the package manager appropriate.\
+`sudo apt install nmap`
+
+Scan ports 1 through 1000 on the host with IP address 172.17.18.120.\
+`nmap -p 1-10000 172.17.18.120`
+
+Use the -p- option to scan all 65,535 TCP ports.\
+`nmap -p- 192.168.1.1`
+
+Specify the protocols to scan using the -sU option for UDP scans, -sS for TCP.\
+`nmap -sU 192.168.1.1`
+
+Specify multiple hosts to scan by providing their IP addresses or hostnames.\
+`nmap 192.168.1.1 192.168.1.2 192.168.1.3`
+
+Use the -oN option to save the scan results to a text file.\
+`nmap -oN scan_results.txt 192.168.1.1`
+
+
+Capture packets on a specific interface.\
+`sudo tcpdump -i eth0`
+
+Capture packets with a specific protocol.\
+`sudo tcpdump -i any tcp`
+
+Capture packets with a specific source or destination IP & port numbers using the src port and dst port.\
+`sudo tcpdump -i any src 192.168.1.10`
+
+Capture packets with specific port numbers.\
+`sudo tcpdump -i any port 443`
+
+
+
