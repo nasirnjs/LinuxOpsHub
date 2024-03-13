@@ -11,13 +11,13 @@ rm: Remove files or directories.
 cp: Copy files or directories.
 mv: Move or rename files and directories.
 cat: Display the content of a file.
-less/more: View a file one page at a time.
 nano/vi: Text editors for creating and editing files.
 ps: List running processes.
 kill: Terminate processes.
 top/htop: Monitor system performance and processes.
 df: Display disk space usage.
 du: Display directory space usage.
+less/more: View a file one page at a time.
 ifconfig/ip: Configure and display network interfaces.
 ping: Check network connectivity.
 ssh: Securely log in to remote machines.
