@@ -60,6 +60,7 @@ To list all available time zones.\
 
 To set the system's time zone, you can use the timedatectl command.\
 `sudo timedatectl set-timezone Asia/Baghdad`
+
 ---
 The history command in Unix-like operating systems is used to display a list of previously executed commands.\
 `history`
@@ -69,6 +70,7 @@ You can also specify an optional argument to limit the number of commands displa
 
 You can use the history command to recall and rerun previously executed commands by referencing their command numbers.\
 `!4`
+
 ---
 Create a tar archive.\
 `tar -cvf archive.tar /path/to/directory`
@@ -90,6 +92,7 @@ Create a compressed tar archive using bzip2 compression.\
 
 Extract files from a compressed tar archive using bzip2 compression.\
 `tar -xvjf archive.tar.bz2`
+
 ---
 
 Copy a file from local to remote.\
@@ -113,6 +116,7 @@ Synchronize files from a remote server to your local machine. `-e` use to use re
 
 Exclude specific files or directories from synchronization.\
 `rsync -avz --exclude='k8s-minikube/' -e ssh nasir@172.17.18.240:/home/nasir/rsynx/k8s/ /home/nasir/Desktop/k8s-st/`
+
 ---
 The file command in Linux is used to determine the type.\
 `file package.json`
@@ -149,6 +153,7 @@ This command performs a case-insensitive search for the specified pattern in the
 
 The man command in Linux is used to display the manual pages for various commands.\
 `man vim`
+
 ---
 
 The sed command, short for stream editor, is a powerful text manipulation tool in Unix-like operating systems.\
@@ -173,6 +178,7 @@ Check network connectivity.
 
 To check which processes are using port 80 (HTTP).\
 `netstat -tuln | grep :80`
+
 ---
 To install nmap, you can use the package manager appropriate.\
 `sudo apt install nmap`
@@ -191,6 +197,7 @@ Specify multiple hosts to scan by providing their IP addresses or hostnames.\
 
 Use the -oN option to save the scan results to a text file.\
 `nmap -oN scan_results.txt 192.168.1.1`
+
 ---
 
 Capture packets on a specific interface.\
@@ -204,7 +211,9 @@ Capture packets with a specific source or destination IP & port numbers using th
 
 Capture packets with specific port numbers.\
 `sudo tcpdump -i any port 443`
+
 ---
+
 
 
  Here's a list of commands for shutting down and rebooting a Linux system.\
