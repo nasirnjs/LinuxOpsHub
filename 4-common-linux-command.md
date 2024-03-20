@@ -18,45 +18,107 @@ top/htop: Monitor system performance and processes.
 df: Display disk space usage.
 du: Display directory space usage.
 less/more: View a file one page at a time.
-ifconfig/ip: Configure and display network interfaces.
-ping: Check network connectivity.
-ssh: Securely log in to remote machines.
-scp: Securely copy files between machines.
 wget/curl: Download files from the internet.
-tar: Archive and extract files.
-apt/apt-get: Package management commands for installing, updating, and removing software packages.
-dpkg: Debian package management (lower-level package handling).
 sudo: Execute commands with superuser privileges.
-history: View command history.
 chmod: Change file permissions (read, write, execute) for files and directories.
 chown: Change file ownership.
 chgrp: Change group ownership of files.
 free: Display system memory usage.
-lsblk: List block devices and their details.
 mount/umount: Mount and unmount filesystems.
 passwd: Change user password.
 useradd/userdel: Add or delete user accounts.
 groupadd/groupdel: Add or delete user groups.
-crontab: Schedule tasks to run at specified times.
-date: Display or set the system date and time.
 hostname: Display or set the system hostname.
-shutdown/reboot: Shutdown or restart the system.
 uname: Display system information.
-sed: Stream editor for text manipulation.
-awk: Text processing tool for extracting and manipulating data.
-ln: Create links (hard and symbolic) to files.
-scp: Securely copy files between machines.
-rsync: Synchronize files and directories between systems.
-aptitude: An alternative to APT package management.
-netstat/ss: Network statistics and socket information.
-lsof: List open files and processes.
-shutdown: Shutdown or restart the system.
-diff: Compare and find differences between files.
-man: Display manual pages for commands.
+
+
 ```
+Open the cron table for editing by running the following command.\
+`crontab -e`
+
+To execute your script via a cron job every 5 minutes.
+`*/5 * * * * /home/nasir/rsync/script.sh >/dev/null 2>&1`
+
+Explanation:
+- `>/dev/null` Redirects the standard output (stdout) of the script to /dev/null, discarding any output.
+- `2>&1` Redirects the standard error (stderr) to the same location as the standard output, which in this case is /dev/null.
+---
+Display the current date and time.\
+`date`
+
+Display the date and time in a specific format.\
+`date +"%d-%m-%y %H:%M:%S"`
+
+Display the date and time in a different time zone.\
+`TZ="America/New_York" date`
+
+To check the current time zone set on your system.\
+`timedatectl`
+
+To list all available time zones.\
+`timedatectl list-timezones`
+
+To set the system's time zone, you can use the timedatectl command.\
+`sudo timedatectl set-timezone Asia/Baghdad`
+---
+The history command in Unix-like operating systems is used to display a list of previously executed commands.\
+`history`
+
+You can also specify an optional argument to limit the number of commands displayed.\
+`history 10`
+
+You can use the history command to recall and rerun previously executed commands by referencing their command numbers.\
+`!4`
+---
+Create a tar archive.\
+`tar -cvf archive.tar /path/to/directory`
+
+Extract files from a tar archive.\
+`tar -xvf archive.tar`
+
+Extract files to a specific directory.\
+`tar -xvf archive.tar -C /path/to/destination_directory`
+
+Create a compressed tar archive.\
+`tar -cvzf archive.tar.gz /path/to/directory`
+
+Extract files from a compressed tar archive.\
+`tar -xvzf archive.tar.gz`
+
+Create a compressed tar archive using bzip2 compression.\
+`tar -cvjf archive.tar.bz2 /path/to/directory`
+
+Extract files from a compressed tar archive using bzip2 compression.\
+`tar -xvjf archive.tar.bz2`
+---
+
+Copy a file from local to remote.\
+`scp -r /path/to/local/file username@remote_host:/path/to/remote/location`
+
+Copy a file from remote to local.\
+`scp -r username@remote_host:/path/to/remote/file /path/to/local/location`
+
+Copy files with specific port and preserve file attributes.\
+`scp -P 2222 -p /path/to/local/file username@remote_host:/path/to/remote/location`
 
 
+Copy files from one directory to another locally.
+`rsync -avr /path/to/source_directory /path/to/destination_directory`
 
+Synchronize files between local and remote directories over SSH.\
+`rsync -avz -e ssh /path/to/local_directory username@remote_host:/path/to/remote_directory`
+
+Synchronize files from a remote server to your local machine. `-e` use to use remote shell\
+`rsync -avz -e ssh nasir@172.17.18.240:/home/nasir/rsynx/k8s/ /home/nasir/Desktop/k8s-st/`
+
+Exclude specific files or directories from synchronization.\
+`rsync -avz --exclude='k8s-minikube/' -e ssh nasir@172.17.18.240:/home/nasir/rsynx/k8s/ /home/nasir/Desktop/k8s-st/`
+---
+The file command in Linux is used to determine the type.\
+`file package.json`
+
+The diff command is comparing file1.txt and file2.txt.\
+`diff -u file1.txt file2.txt`
 
 Display the first 10 lines of a file.\
 `head file.txt`
@@ -87,10 +149,31 @@ This command performs a case-insensitive search for the specified pattern in the
 
 The man command in Linux is used to display the manual pages for various commands.\
 `man vim`
+---
 
-The file command in Linux is used to determine the type.\
-`file package.json`
+The sed command, short for stream editor, is a powerful text manipulation tool in Unix-like operating systems.\
+`sed 's/old_text/new_text/' file.txt`
 
+To replace the word "world" with "WORLD!!!" in the output.txt file.\
+`sed -i 's/world/WORLD!!!/g' output.txt`
+
+---
+Configure and display network interfaces.
+`ifconfig`
+
+`ifconfig eth0`
+
+`ip a`
+
+Check network connectivity.
+`ping www.example.com`
+
+`ping 172.17.18.240`
+
+
+To check which processes are using port 80 (HTTP).\
+`netstat -tuln | grep :80`
+---
 To install nmap, you can use the package manager appropriate.\
 `sudo apt install nmap`
 
@@ -108,7 +191,7 @@ Specify multiple hosts to scan by providing their IP addresses or hostnames.\
 
 Use the -oN option to save the scan results to a text file.\
 `nmap -oN scan_results.txt 192.168.1.1`
-
+---
 
 Capture packets on a specific interface.\
 `sudo tcpdump -i eth0`
@@ -121,6 +204,45 @@ Capture packets with a specific source or destination IP & port numbers using th
 
 Capture packets with specific port numbers.\
 `sudo tcpdump -i any port 443`
+---
 
 
+ Here's a list of commands for shutting down and rebooting a Linux system.\
+ ```bash
+#This command halts the system, bringing it to a complete stop
+init 0 
 
+# Halt the system immediately
+sudo halt
+
+# Log out all users and then halt the system
+sudo shutdown -h now
+
+# Shutdown immediately
+sudo shutdown -h now
+
+# Restart immediately
+sudo shutdown -r now
+
+# Shutdown at a specific time (e.g., 10 minutes from now)
+sudo shutdown -h +10
+
+#System will be shutting down in 1 hour and 20 minutes.
+sudo shutdown -h +1:20
+
+# Shutdown at a specific time (e.g., 10:00 PM) with a custom message
+sudo shutdown -h 22:00 "System will be shutting down for maintenance at 10:00 PM. Please save your work."
+
+
+#This command initiates a system reboot
+init 0 
+
+# Reboot the system immediately
+sudo reboot
+
+#For immediate reboot
+sudo shutdown -r now 
+
+#System will be rebooting in 1 hour and 40 minutes.
+sudo shutdown -r +1:40 "System will be rebooting in 1 hour and 40 minutes."
+ ```
