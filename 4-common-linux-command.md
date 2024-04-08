@@ -214,7 +214,18 @@ Capture packets with specific port numbers.\
 
 ---
 
+Show you any installed packages related to Python 2.7\
+`apt list --installed | grep -i python2.7`
 
+Used to list all systemd units of type "service" currently loaded in the system.\
+`systemctl list-units --type service`
+
+Used to display lines from the /etc/services file that contain the string "ssh".\
+`cat /etc/services| grep ssh`
+
+
+
+---
 
  Here's a list of commands for shutting down and rebooting a Linux system.\
  ```bash
