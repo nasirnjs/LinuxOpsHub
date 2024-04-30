@@ -17,11 +17,11 @@
   
 3. **Step 3: Setting Up Server Application Root.**
    ```bash
-   sudo mkdir -p /var/www/nasir.xyz
+   sudo mkdir -p /var/www/cloudopsschool.com
    ```
 4. **Step 4: Create a Sample index.html Page**
    ```
-   sudo vim /var/www/nasir.xyz/index.html
+   sudo vim /var/www/cloudopsschool.com/index.html
    ```
    ```
    <html>
@@ -35,16 +35,16 @@
    ```
 5. **Step 5: Create a Server Block Virtual Hosts**
     ```
-    sudo vim /etc/apache2/sites-available/nasir.xyz.conf
+    sudo vim /etc/apache2/sites-available/cloudopsschool.com.conf
 
     ```
 
     ```
     <VirtualHost *:80>
-        ServerAdmin webmaster@nasir.xyz
-        ServerName nasir.xyz
-        ServerAlias www.nasir.xyz
-        DocumentRoot /var/www/nasir.xyz/
+        ServerAdmin webmaster@cloudopsschool.com
+        ServerName cloudopsschool.com
+        ServerAlias www.cloudopsschool.com
+        DocumentRoot /var/www/cloudopsschool.com/
 
         # Customizing ErrorLog and CustomLog
         ErrorLog /var/log/apache2/nasir_error.log
@@ -54,7 +54,7 @@
 
 6. **Steps 6: Enable the File and Reload Apache.** Enable the file by creating a link from it to the sites-enabled directory, which Apache reads from during startup.
     ```bash
-    sudo a2ensite nasir.xyz.conf
+    sudo a2ensite cloudopsschool.com.conf
     sudo systemctl reload apache2
     ```
 
