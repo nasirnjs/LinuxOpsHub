@@ -162,6 +162,8 @@ The sed command, short for stream editor, is a powerful text manipulation tool i
 To replace the word "world" with "WORLD!!!" in the output.txt file.\
 `sed -i 's/world/WORLD!!!/g' output.txt`
 
+To remove lines starting with # and modify the file directly.\
+`sed -i '/^\s*#/d' filename`
 ---
 Configure and display network interfaces.
 `ifconfig`
