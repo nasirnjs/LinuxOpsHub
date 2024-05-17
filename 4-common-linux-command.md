@@ -164,6 +164,7 @@ To replace the word "world" with "WORLD!!!" in the output.txt file.\
 
 To remove lines starting with # and modify the file directly.\
 `sed -i '/^\s*#/d' filename`
+
 ---
 Configure and display network interfaces.
 `ifconfig`
