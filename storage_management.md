@@ -61,6 +61,9 @@ sudo df -h
 **Steps 7:** Verify the mount (df -h /mnt/sdb_mount).\
 `df -h /mnt/sdb_mount`
 
+**Steps 8:** Get filesystem attributes and UUID (Universally Unique Identifier) \
+`sudo blkid /dev/sdb1`
+
 **Steps 8:** Add entry to /etc/fstab\
 Edit /etc/fstab using a text editor (sudo vim /etc/fstab) and add the following line at the end.\
 `UUID=c9516c06-7a49-441d-b1cb-6cc3db593217 /mnt/sdb_mount ext4 defaults 0 0`
