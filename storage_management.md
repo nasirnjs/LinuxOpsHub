@@ -37,6 +37,41 @@ sudo lvextend -l +100%FREE /dev/vg0/lv-0
 sudo resize2fs /dev/vg0/lv-0
 sudo df -h
 ```
+
+## Without LVM setting up and mounting a new disk into Ubuntu
+
+**Steps 1:** List block devices before partitioning (sudo lsblk).\
+`sudo lsblk`
+
+**Steps 2:** Partition the disk (sudo fdisk /dev/sdb).\
+`sudo fdisk /dev/sdb`
+
+**Steps 3:** List block devices after partitioning (sudo lsblk).\
+`sudo lsblk`
+
+**Steps 4:** Format the partition (sudo mkfs.ext4 /dev/sdb1).\
+`sudo mkfs.ext4 /dev/sdb1`
+
+**Steps 5:** Create a mount point (sudo mkdir /mnt/sdb_mount).\
+`sudo mkdir /mnt/sdb_mount`
+
+**Steps 6:** Mount the partition (sudo mount /dev/sdb1 /mnt/sdb_mount).\
+`sudo mount /dev/sdb1 /mnt/sdb_mount`
+
+**Steps 7:** Verify the mount (df -h /mnt/sdb_mount).\
+`df -h /mnt/sdb_mount`
+
+**Steps 8:** Add entry to /etc/fstab\
+Edit /etc/fstab using a text editor (sudo vim /etc/fstab) and add the following line at the end.\
+`UUID=c9516c06-7a49-441d-b1cb-6cc3db593217 /mnt/sdb_mount ext4 defaults 0 0`
+
+**Steps 9:** Mount all entries in /etc/fstab (sudo mount -a).\
+`sudo mount -a`
+
+**Steps 10:** Verify the mount after adding to /etc/fstab (df -h /mnt/sdb_mount).\
+`df -h /mnt/sdb_mount`
+
+
 **Create and configure file systems**
 
 The mkfs command is used to create a new file system on a device (such as a partition or a disk).\
