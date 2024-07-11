@@ -16,40 +16,40 @@ MBR (Master Boot Record) and GPT (GUID Partition Table) are two different partit
 
 **Steps to Extend an LVM Partition and Filesystem**
 
-    Steps 1. List Block Devices\
-    `sudo lsblk`
+**Steps 1:** List Block Devices\
+`sudo lsblk`
 
-    Steps 2. Open Disk for Partitioning\
-    `sudo fdisk /dev/sdb`
+**Steps 2:** Open Disk for Partitioning\
+`sudo fdisk /dev/sdb`
 
-    Steps 3. List Partitions on the Disk\
-    `sudo fdisk -l /dev/sdb`
+**Steps 3:** List Partitions on the Disk\
+`sudo fdisk -l /dev/sdb`
 
-    Steps 4. Initialize a Partition as a Physical Volume\
-    `sudo pvcreate /dev/sdb1`
+**Steps 4:** Initialize a Partition as a Physical Volume\
+`sudo pvcreate /dev/sdb1`
 
-    Steps 5. Display Information About Volume Groups\
-    `sudo vgdisplay`
+**Steps 5:** Display Information About Volume Groups\
+`sudo vgdisplay`
 
-    Steps 6. Display Information About Physical Volumes\
-    `sudo pvdisplay`
+**Steps 6:** Display Information About Physical Volumes\
+`sudo pvdisplay`
 
-    Steps 7. Extend an Existing Volume Group\
-    `sudo vgextend vg0 /dev/sdb1`
+**Steps 7:** Extend an Existing Volume Group\
+`sudo vgextend vg0 /dev/sdb1`
 
-    Steps 8. Display Information About Logical Volumes\
-    `sudo lvdisplay`
+**Steps 8:** Display Information About Logical Volumes\
+`sudo lvdisplay`
 
-    Steps 9. Display Disk Usage\
-    `sudo df -h`
+**Steps 9:** Display Disk Usage\
+`sudo df -h`
 
-    Steps 10. Extend a Logical Volume\
-    `sudo lvextend -l +100%FREE /dev/mapper/vg0-lv--0`
+**Steps 10:** Extend a Logical Volume\
+`sudo lvextend -l +100%FREE /dev/mapper/vg0-lv--0`
 
-    Steps 11. Resize the Filesystem on the Logical Volume\
-    `sudo resize2fs /dev/mapper/vg0-lv--0`
+**Steps 11:** Resize the Filesystem on the Logical Volume\
+`sudo resize2fs /dev/mapper/vg0-lv--0`
 
-    Steps 12. Display Disk Usage (Again)\
+**Steps 12:** Display Disk Usage (Again)\
     `sudo df -h`
 
 **Summary of Steps**
