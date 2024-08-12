@@ -2,8 +2,8 @@
 Description=Manage Java service
 
 [Service]
-WorkingDirectory=/home/aes-ml/AESL/Rajuk_Data_API
-ExecStart=/home/aes-ml/.sdkman/candidates/java/current/bin/java -Dspring.config.location=application.properties -jar razuk-work-0.0.2-SNAPSHOT_2.jar
+WorkingDirectory=/home/nasir/spring-boot
+ExecStart=/home/nasir/.sdkman/candidates/java/current/bin/java -Dspring.config.location=application.properties -jar spring-boot-work-0.0.2-SNAPSHOT_2.jar
 
 User=root
 Type=simple
