@@ -1,3 +1,10 @@
+
+Create a systemd service
+
+`vim /etc/systemd/system/nasir-springboot.service`
+
+
+---
 [Unit]
 Description=Manage Java service
 
