@@ -19,3 +19,25 @@ RestartSec=10
 
 [Install]
 WantedBy=multi-user.target
+
+---
+#python service for GOU with 
+
+[Unit]
+Description=Manage Python service anaconda3
+
+[Service]
+# Set the working directory
+WorkingDirectory=/home/master/OCR_Project
+
+# Command to run the Python script with the activated conda environment
+ExecStart=/bin/bash -c 'source /home/master/anaconda3/etc/profile.d/conda.sh && conda activate ocr && python /home/master/OCR_Project/app.py'
+
+
+User=master
+Type=simple
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
