@@ -22,7 +22,7 @@ RestartSec=10
 WantedBy=multi-user.target
 ```
 ---
-#python service for GOU with 
+#python service for GPU with 
 
 ```bash
 [Unit]
