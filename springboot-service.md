@@ -1,10 +1,11 @@
 
 Create a systemd service
 
-`vim /etc/systemd/system/nasir-springboot.service`
+`sudo vim /etc/systemd/system/nasir-springboot.service`
 
 
 ---
+```bash
 [Unit]
 Description=Manage Java service
 
@@ -19,10 +20,11 @@ RestartSec=10
 
 [Install]
 WantedBy=multi-user.target
-
+```
 ---
 #python service for GOU with 
 
+```bash
 [Unit]
 Description=Manage Python service anaconda3
 
@@ -41,3 +43,4 @@ RestartSec=10
 
 [Install]
 WantedBy=multi-user.target
+```
