@@ -24,7 +24,7 @@ Steps 2. Once the download process is complete, extracting the archive.
 
 6. To add the JAVA_HOME and PATH variables permanently in your .bashrc file, 
 
-`vim ~/.bashrc`
+    `vim ~/.bashrc`
 
 ```bash
 # Set JAVA_HOME environment variable
