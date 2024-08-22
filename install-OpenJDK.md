@@ -22,10 +22,21 @@ Steps 2. Once the download process is complete, extracting the archive.
 5. Added the bin directory of the JDK to your PATH.\
 `export PATH=$JAVA_HOME/bin:$PATH`
 
-6. Reloaded the shell configuration to apply the changes.\
+6. To add the JAVA_HOME and PATH variables permanently in your .bashrc file, 
+
+`vim ~/.bashrc`
+
+```bash
+# Set JAVA_HOME environment variable
+export JAVA_HOME=/usr/local/jdk-18
+# Add JDK bin directory to PATH
+export PATH=$JAVA_HOME/bin:$PATH
+
+```
+7. Reloaded the shell configuration to apply the changes.\
 `source ~/.zshrc`
 
-7. Checked the Java version to confirm the installation.\
+1. Checked the Java version to confirm the installation.\
 `java --version`
 
 **Optional**\
