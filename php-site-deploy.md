@@ -54,3 +54,20 @@ exit
 ```
 
 
+## PHP sockets Tuning
+```bash
+vim /etc/php/7.4/fpm/pool.d/www.conf
+
+#Add Following Values
+
+pm = dynamic
+pm.max_children = 50
+pm.start_servers = 10
+pm.min_spare_servers = 10
+pm.max_spare_servers = 20
+```
+`sudo php-fpm7.4 -t`
+
+`systemctl restart php7.4-fpm`
+
+[PHP-FPM-Tunning References](https://spot13.com/pmcalculator/)
