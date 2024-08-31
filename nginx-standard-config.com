@@ -4,7 +4,7 @@
 server {
 	
         # SSL configuration
-        #listen 8080;
+        #listen 80;
         # listen [::]:443 ssl default_server;
 
         root /var/www/html;
