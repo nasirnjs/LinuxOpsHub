@@ -1,5 +1,8 @@
 # VMware Workstation Relates common issues and solutions
 
+**To find the version of VMware Workstation that is already installed on your system**.\
+`vmware-installer -l`
+
 ## VMware Workstation GCC Compiler Error
 ```bash
 sudo apt update
