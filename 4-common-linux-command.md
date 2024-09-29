@@ -49,7 +49,6 @@ To list all available time zones.\
 Display the date and time in a different time zone.\
 `TZ="America/New_York" date`
 
-
 To set the system's time zone, you can use the timedatectl command.\
 `sudo timedatectl set-timezone Asia/Dhaka`
 
@@ -95,7 +94,6 @@ Copy a file from remote to local.\
 
 Copy files with specific port and preserve file attributes.\
 `scp -P 2222 -p /path/to/local/file username@remote_host:/path/to/remote/location`
-
 
 Copy files from one directory to another locally.
 `rsync -avr /path/to/source_directory /path/to/destination_directory`
@@ -165,11 +163,10 @@ Configure and display network interfaces.
 
 `ip a`
 
-Check network connectivity.
+Check network connectivity.\
 `ping www.example.com`
 
 `ping 172.17.18.240`
-
 
 To check which processes are using port 80 (HTTP).\
 `netstat -tuln | grep :80`
