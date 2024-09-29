@@ -33,15 +33,6 @@ uname: Display system information.
 
 
 ```
-Open the cron table for editing by running the following command.\
-`crontab -e`
-
-To execute your script via a cron job every 5 minutes.
-`*/5 * * * * /home/nasir/rsync/script.sh >/dev/null 2>&1`
-
-Explanation:
-- `>/dev/null` Redirects the standard output (stdout) of the script to /dev/null, discarding any output.
-- `2>&1` Redirects the standard error (stderr) to the same location as the standard output, which in this case is /dev/null.
 ---
 Display the current date and time.\
 `date`
@@ -49,17 +40,18 @@ Display the current date and time.\
 Display the date and time in a specific format.\
 `date +"%d-%m-%y %H:%M:%S"`
 
-Display the date and time in a different time zone.\
-`TZ="America/New_York" date`
-
 To check the current time zone set on your system.\
 `timedatectl`
 
 To list all available time zones.\
 `timedatectl list-timezones`
 
+Display the date and time in a different time zone.\
+`TZ="America/New_York" date`
+
+
 To set the system's time zone, you can use the timedatectl command.\
-`sudo timedatectl set-timezone Asia/Baghdad`
+`sudo timedatectl set-timezone Asia/Dhaka`
 
 ---
 The history command in Unix-like operating systems is used to display a list of previously executed commands.\
@@ -226,7 +218,16 @@ Used to list all systemd units of type "service" currently loaded in the system.
 Used to display lines from the /etc/services file that contain the string "ssh".\
 `cat /etc/services| grep ssh`
 
+---
+Open the cron table for editing by running the following command.\
+`crontab -e`
 
+To execute your script via a cron job every 5 minutes.
+`*/5 * * * * /home/nasir/rsync/script.sh >/dev/null 2>&1`
+
+Explanation:
+- `>/dev/null` Redirects the standard output (stdout) of the script to /dev/null, discarding any output.
+- `2>&1` Redirects the standard error (stderr) to the same location as the standard output, which in this case is /dev/null.
 
 ---
 
