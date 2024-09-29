@@ -70,28 +70,37 @@ sudo groupmod --gid new_gid group_name
 ```
 
 **sudo (Superuser Do)**:\
-sudo (Superuser Do)` is a command-line utility in Unix and Unix-like operating systems that allows permitted users to execute a command as the superuser or another user, as specified by the security policy.\
-**In simpler terms:**\
-**Superuser:** The superuser, often abbreviated as *root*, is a special user with administrative privileges. The superuser has the ability to execute any command, modify any file, and perform any system task.\
+sudo (Superuser Do)` is a command-line utility in Unix and Unix-like operating systems that allows permitted users to execute a command as the superuser or another user, as specified by the security policy.
+
+**In simpler terms:**
+
+**Superuser:** The superuser, often abbreviated as *root*, is a special user with administrative privileges. The superuser has the ability to execute any command, modify any file, and perform any system task.
+
 **sudo Command:** The *sudo* command allows a permitted user to execute a command as the superuser or another user, according to the security policy configured in the */etc/sudoers* file.
 
 **Key Concepts:**\
-**Root Privileges:** Users granted sudo privileges can perform actions that would normally require root (administrative) privileges.\
+**Root Privileges:** Users granted sudo privileges can perform actions that would normally require root (administrative) privileges.
+
 **Security Policy:** The security policy for sudo is defined in the */etc/sudoers* file. This file specifies which users or groups are allowed to run which commands as the superuser.
 
 ### Managing Sudo User Permissions
 #Adding a User to the sudo Group\
 `sudo usermod -aG sudo username`
 
-#Editing the sudoers File
+#Editing the sudoers File.\
 `/etc/sudoers`
-or\
+
 `sudo visudo`
 ```
-#Specifies that the user can run any command without entering a password
-username ALL=(ALL) NOPASSWD: ALL
+#Specifies that the user to give a user full sudo privilege
+username ALL=(ALL:ALL) ALL
+
+#To allow a user to run all commands without a password prompt
+username ALL=(ALL:ALL) NOPASSWD: ALL
+
 #Allow a User to Run a Custom Script
 username ALL=(ALL) NOPASSWD: /path/to/custom/script.sh
+
 Add the following line to allow the user to restart nginx without a password
 username ALL=(ALL) NOPASSWD: /etc/init.d/nginx restart
 ```
