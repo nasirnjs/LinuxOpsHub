@@ -12,3 +12,6 @@
 
 
 ## Vim Shortcuts List
+
+[References1](https://vim.rtorr.com/)
+[References2](https://devhints.io/vim)
