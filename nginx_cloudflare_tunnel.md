@@ -1,4 +1,4 @@
-# 🐮 Nginx Configuration for application Laravel App (Behind Cloudflare)
+# Nginx Configuration for application Laravel App (Behind Cloudflare)
 
 This configuration is set up to serve a Laravel application (`application`) via Nginx, with HTTPS redirection handled using Cloudflare's `X-Forwarded-Proto` header. It also includes caching for static files and blocking for sensitive files.
 
