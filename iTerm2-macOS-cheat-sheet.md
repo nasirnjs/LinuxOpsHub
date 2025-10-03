@@ -1,3 +1,15 @@
+
+# iTerm2 Installation & Usage Guide (macOS)
+
+## 📌 What is iTerm2?
+[iTerm2](https://iterm2.com/) is a powerful terminal emulator for macOS.  
+It provides advanced features like split panes, tabs, broadcast input, profiles, themes, and more — making it a great alternative to the default Terminal app and Linux’s Terminator.
+
+## 1. Install via Homebrew (Recommended)
+```bash
+brew install --cask iterm2
+```
+
 # iTerm2 Keyboard Shortcuts (macOS)
 
 ## 🔹 Tabs & Windows
