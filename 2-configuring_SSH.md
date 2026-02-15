@@ -79,6 +79,9 @@ The default SSH port is 22 and most of the attack scripts check are written arou
 7. Disable password based SSH login
 
 
+Verify SSH Configuration Syntax.\
+`sudo sshd -t -f /etc/ssh/sshd_config`
+
 ## Steps 4: Allowing SSH through the firewall
 Ubuntu comes with a firewall utility called UFW (UncomplicatedFirewall) which is an interface for iptables that in turn manages the network’s rules. If the firewall is active, it may prevent the connection to your SSH Server.
 To configure UFW so that it allows the wanted access, you need to run the following command.
@@ -104,6 +107,11 @@ To connect to your Ubuntu system you need to know the IP address of the computer
 
 ## Steps 6: Enable,Disable or Status check
 Your commands to manage the SSH service are correct, but the service command is being used alongside systemctl. It's preferable to stick with one of them for consistency. Since Ubuntu 22.04 uses systemd, it's recommended to use systemctl for managing services.
+
+Reload SSH (apply config safely, keeps sessions alive)
+```bash
+sudo systemctl reload ssh
+```
 ```bash
 sudo systemctl status ssh
 sudo systemctl stop ssh
