@@ -10,6 +10,16 @@
 - Press `Ctrl + H` Delete the character before the cursor (Backspace).
 - Press `Ctrl + D` Delete the character under the cursor (Delete).
 
+Quick Vim Line Navigation Summary
+
+| Action               | Key  |
+| -------------------- | ---- |
+| Beginning of line    | `0`  |
+| First non-blank char | `^`  |
+| End of line          | `$`  |
+| Beginning of file    | `gg` |
+| End of file          | `G`  |
+
 
 ## Vim Shortcuts List
 
